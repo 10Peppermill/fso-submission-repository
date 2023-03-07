@@ -9,7 +9,8 @@ sequenceDiagram
     
     browser->>spa.js : onsubmit() handler function called
     spa.js->>data.json : new note is pushed in data
-    spa.js->>browser : redrawNotes() with updated data 
+    spa.js->>browser : redrawNotes() with updated data
+    spa.js->>browser : sendToServer(note) 
     browser->>server : POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     activate server
     server-->>browser: 201 status
